@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    회원가입
+{% endblock %}
+{% block content %}
+    <form action="/sign_up/" method="post" autocomplete="off">
+        {% csrf_token %}
+        ID:<input type="text" id="username" name="username">
+        PW:<input type="password" id="password" name ="password" >
+        PW2:<input type="password" id="password2" name ="password2" >
+        email:<input type="text" id="email" name="email">
+        <input type="submit" name="submit" name="login">
+    </form>
+    {% if error %}
+        <p style="color:red">{{error}}</p>
+    {% endif %}
+{% endblock %}

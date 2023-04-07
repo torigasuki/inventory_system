@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    상품등록
+{% endblock %}
+{% block content %}
+    <form action="/products/" method="post">
+        {% csrf_token %}
+        Code:<input type="text" id="code" name="code" maxlength="10"><br><br>
+        Name:<input type="text" id="name" name="name" maxlength="100"><br><br>
+        Price: <input type="number" id="price" name="price" step="100"><br><br>
+        Size: 
+        <select name="size" id="size">
+            <option value="S">Small</option>
+            <option value="M">Medium</option>
+            <option value="L">Large</option>
+            <option value="F">Free</option>
+        </select>
+
+    </select><br><br>
+    <input type="submit" value="Submit">
+    </form>
+{% endblock %}

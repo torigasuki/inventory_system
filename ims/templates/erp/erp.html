@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    재고관리
+{% endblock %}
+{% block content %}
+<style>
+    ul{
+        list-style: none;
+        margin: 0;
+        
+        padding: 0;
+        overflow: hidden;
+    }
+    li{
+        float: left;
+        width:100px;
+    }
+</style>
+    <ul>
+        <li>코드</li>
+        <li>이름</li>
+        <li>가격</li>
+        <li>사이즈</li>
+        <li>입고량</li>
+        <li>출고량</li>
+        <li>전체재고</li>
+        <li style="width: 200px;">입고일</li>
+        <li style="width: 200px;">출고일</li>
+    </ul>
+    {%for item in product_list %}
+    <ul>
+        <li>{{item.code}}</li>
+        <li>{{item.name}}</li>
+        <li>{{item.price}}</li>
+        <li>{{item.size}}</li>
+        <li>{{item.inbound_count}}</li>
+        <li>{{item.unbound_count}}</li>
+        <li>{{item.stock}}</li>
+        <li style="width: 200px;">{{item.inbound_date}}</li>
+        <li style="width: 200px;">{{item.unbound_date}}</li>
+    </ul>
+    {% endfor %}
+{% endblock %}
